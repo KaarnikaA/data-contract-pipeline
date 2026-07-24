@@ -1,0 +1,185 @@
+{
+  "expectations": [
+    {
+      "id": "5c475050-42d7-4b45-bfc9-bff0fc8a6692",
+      "kwargs": {
+        "column": "order_id"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "99280e6f-663d-4885-b2ce-b2632d79558c",
+      "kwargs": {
+        "column": "order_id"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_unique"
+    },
+    {
+      "id": "48f62d31-420a-4bb6-b08e-6d2a1a2b174c",
+      "kwargs": {
+        "column": "user_id"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "855236da-0912-4519-bbde-7311af0da436",
+      "kwargs": {
+        "column": "user_id",
+        "type_": "int64"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_of_type"
+    },
+    {
+      "id": "724f60d8-f806-41b7-9c22-93ab9b2a1b58",
+      "kwargs": {
+        "column": "product_id"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "a7d720b3-8aac-47c8-a057-816345f38a78",
+      "kwargs": {
+        "column": "category"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "0302ca7b-1439-4bfb-a51e-0075298b1e18",
+      "kwargs": {
+        "column": "category",
+        "value_set": [
+          "Sports",
+          "Home",
+          "Electronics",
+          "Clothing",
+          "Toys",
+          "Grocery",
+          "Books",
+          "Beauty"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_distinct_values_to_be_in_set"
+    },
+    {
+      "id": "d3306560-3f7c-4aea-9d2c-cfaae0b2f647",
+      "kwargs": {
+        "column": "price"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "2a621936-a180-4e65-99ea-3c6ba721882a",
+      "kwargs": {
+        "column": "price",
+        "max_value": 100000.0,
+        "min_value": 0.01
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "073735e5-78e5-44ec-82cd-e53d01ff4e65",
+      "kwargs": {
+        "column": "qty"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "d56899a8-a9a6-4ad1-b772-7d555414e39a",
+      "kwargs": {
+        "column": "qty",
+        "max_value": 1000.0,
+        "min_value": 1.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "708b4c23-f811-493a-bc31-fdb821a200ac",
+      "kwargs": {
+        "column": "total_price"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "e0548cb5-3fd3-46dc-9199-938f5ec6871b",
+      "kwargs": {
+        "column": "total_price",
+        "max_value": 1000000.0,
+        "min_value": 0.01
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "d797db51-aa48-48a0-b29e-fcdc87b114b6",
+      "kwargs": {
+        "column": "order_date"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "fdcb5f32-1c59-4ccf-bfec-734369898c44",
+      "kwargs": {
+        "column": "country"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "4ce856d2-e573-4d9c-ab3d-6cbae33adaa2",
+      "kwargs": {
+        "column": "customer_segment"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "eea4da0a-d538-4221-ba86-d7e982490533",
+      "kwargs": {
+        "column": "customer_segment",
+        "value_set": [
+          "Low-Value",
+          "Mid-Value",
+          "High-Value"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_distinct_values_to_be_in_set"
+    }
+  ],
+  "id": "291e1053-4967-4121-9837-4e6e244fe3b2",
+  "meta": {
+    "great_expectations_version": "1.19.0"
+  },
+  "name": "orders_contract",
+  "notes": null
+}
