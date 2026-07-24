@@ -1,9 +1,3 @@
-"""
-Sends a Slack alert with details about which pipeline check failed.
-
-Usage: python3 scripts/send_slack_alert.py "some failure message"
-"""
-
 import sys
 import os
 import requests
