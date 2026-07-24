@@ -1,20 +1,10 @@
-"""
-Sets up our Great Expectations project and defines the data contract
-for the e-commerce orders dataset.
-
-Safe to re-run anytime - it'll reuse the datasource/asset if they already
-exist, and always rebuilds the contract (suite) fresh so edits take effect.
-"""
-
 import great_expectations as gx
 import pandas as pd
 
-# this creates (or loads, if it already exists) the GX project folder
+
 context = gx.get_context(project_root_dir=".")
 
-# point GX at our reference csv as a pandas datasource
-# (wrapped in try/except because GX 1.x errors out if these already exist,
-# and re-running this script should just reuse them instead of failing)
+
 try:
     data_source = context.data_sources.add_pandas(name="orders_datasource")
 except Exception:
@@ -30,11 +20,11 @@ try:
 except Exception:
     batch_definition = data_asset.get_batch_definition("orders_batch")
 
-# load the reference data so we can build the suite against real values
+
 df = pd.read_csv("data/reference/ecommerce_orders_10k_updated.csv")
 batch = batch_definition.get_batch(batch_parameters={"dataframe": df})
 
-# always start fresh - delete the old contract if it exists, then rebuild it
+
 try:
     context.suites.delete("orders_contract")
 except Exception:
