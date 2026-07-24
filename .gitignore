@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+
+# Airflow (local standalone)
+airflow_home/
+
+# Secrets
+.env
+
+# Generated test artifacts (not source data)
+data/incoming/*.csv
+data/incoming/drift_report.html
+
+# OS
+.DS_Store
+data/reports/*.html
