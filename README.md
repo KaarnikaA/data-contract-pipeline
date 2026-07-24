@@ -9,7 +9,7 @@ data contract (Great Expectations — nulls, types, ranges, allowed categories),
 statistical drift against a reference baseline (Evidently AI). If either check fails,
 it fires a Slack alert with the exact reason.
 
-![Architecture](architecture_diagram.png)
+
 
 ## Why two checks, not one
 
@@ -19,7 +19,7 @@ simulated 50x price spike — and it passed. Every value was still technically "
 flag. Evidently caught it immediately, because the *distribution* had clearly shifted
 even though no individual value broke a rule.
 
-![Detection proof](detection_proof.png)
+
 
 That's the actual finding this project is built around: rule-based contracts and
 statistical drift detection catch different classes of failure, and you need both.
