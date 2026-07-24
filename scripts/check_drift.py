@@ -1,10 +1,3 @@
-"""
-Compares the incoming batch against our reference data to check for
-statistical drift - catches things like a price distribution shifting
-even when every individual value still looks "valid" (which is exactly
-the gap our GX contract can't catch, as we proved in Step 7).
-"""
-
 import sys
 import pandas as pd
 
@@ -27,8 +20,6 @@ result = report.run(reference_data=reference_dataset, current_data=current_datas
 
 result_dict = result.dict()
 
-# the first metric in a DataDriftPreset report is always DriftedColumnsCount
-# it looks like {'count': X, 'share': Y} - X is how many columns drifted
 drift_summary = result_dict["metrics"][0]["value"]
 drifted_count = drift_summary["count"]
 drifted_share = drift_summary["share"]
