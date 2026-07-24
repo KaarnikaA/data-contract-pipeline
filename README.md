@@ -30,38 +30,19 @@ statistical drift detection catch different classes of failure, and you need bot
 data/incoming/orders_batch.csv
         │
         ▼
-validate_orders_contract   (Great Expectations — 17 rules)
-        │  only runs downstream if this passes
+validate_orders_contract   
+        │ 
         ▼
-check_data_drift            (Evidently AI — drift vs. reference data)
-        │  runs regardless of which task above failed
+check_data_drift           
+        │  
         ▼
-send_slack_alert            (fires only if something failed, with the exact reason)
+send_slack_alert            
 ```
 
 ## Tools
 
 Airflow · Great Expectations · Evidently AI · Slack Incoming Webhooks · pandas
 
-## Project structure
-
-```
-data-contract-pipeline/
-├── dags/
-│   └── orders_contract_dag.py        # the 3-task DAG
-├── great_expectations/                 # GX project config (auto-managed)
-├── data/
-│   ├── reference/                      # clean baseline dataset
-│   └── incoming/                        # drop a batch here to check it
-├── scripts/
-│   ├── setup_gx.py                      # defines the contract (run once, or after edits)
-│   ├── validate_batch.py                 # standalone contract check, no Airflow needed
-│   ├── check_drift.py                    # standalone drift check, no Airflow needed
-│   ├── send_slack_alert.py               # standalone Slack test
-│   └── generate_corrupted_batches.py     # builds the 3 test failure scenarios
-├── .env                                  # SLACK_WEBHOOK_URL (gitignored)
-└── .gitignore
-```
 
 ## Setup
 
