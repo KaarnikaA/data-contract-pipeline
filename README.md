@@ -76,8 +76,8 @@ SLACK_WEBHOOK_URL=<your incoming webhook url>
 ## Run it
 
 ```bash
-python3 scripts/setup_gx.py     # builds the data contract
-airflow standalone               # starts Airflow, visit localhost:8080
+python3 scripts/setup_gx.py     
+airflow standalone               
 ```
 
 Drop a batch into `data/incoming/orders_batch.csv`, then trigger the
